@@ -1,0 +1,8 @@
+{
+  "name": "AI-Graft",
+  "description": "Farmer-friendly tomato grafting assistant with live camera plant analysis, visual cut-line guidance, Hindi/English voice read-aloud, and 14-day healing tracker.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
