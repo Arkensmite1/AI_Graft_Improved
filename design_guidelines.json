@@ -1,0 +1,173 @@
+{
+  "app_name": "AI-GRAFT",
+  "personality": "4 Tactile / Playful LIGHT",
+  "personality_one_liner": "A tactile, resilient tool that speaks clearly to farmers through oversized targets, stark color-coded states, and friendly typography.",
+  "color": {
+    "surface": "#FFFFFF",
+    "onSurface": "#111827",
+    "surfaceSecondary": "#F3F4F6",
+    "onSurfaceSecondary": "#1F2937",
+    "surfaceTertiary": "#E5E7EB",
+    "onSurfaceTertiary": "#374151",
+    "surfaceInverse": "#111827",
+    "onSurfaceInverse": "#FFFFFF",
+    "brand": "#166534",
+    "brandPrimary": "#15803D",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#DCFCE7",
+    "onBrandSecondary": "#166534",
+    "brandTertiary": "#86EFAC",
+    "onBrandTertiary": "#14532D",
+    "success": "#22C55E",
+    "onSuccess": "#FFFFFF",
+    "warning": "#EAB308",
+    "onWarning": "#FFFFFF",
+    "error": "#EF4444",
+    "onError": "#FFFFFF",
+    "border": "#E5E7EB",
+    "borderStrong": "#D1D5DB",
+    "divider": "#F3F4F6",
+    "muted": "#6B7280",
+    "onBrand": "#FFFFFF"
+  },
+  "typography": {
+    "displayFontFamily": "Baloo 2",
+    "textFontFamily": "Baloo 2",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous spacing. Tap targets must be oversized for rough environments.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": "2",
+  "navigation": "bottom_tabs",
+  "icon_set": "Ionicons",
+  "glassmorphism": {
+    "enabled": "false",
+    "do's": [],
+    "dont's": [
+      "Do not use glassmorphism. Maintain solid, high-contrast backgrounds for maximum outdoor visibility."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "haptics": {
+    "events": {
+      "primary_button_press": "impactMedium",
+      "secondary_button_press": "impactLight",
+      "camera_capture": "impactHeavy",
+      "language_toggle": "selection",
+      "audio_play": "impactMedium",
+      "tab_press": "selection",
+      "success_result": "notificationSuccess",
+      "error_result": "notificationError"
+    }
+  },
+  "screens": [
+    {
+      "name": "Home",
+      "purpose": "Primary launchpad with a massive call-to-action to scan a plant, plus quick access to tips and recent history.",
+      "states": {
+        "loading": "Centered large green spinner",
+        "empty": "Illustration of a seedling, 'Scan your first plant!'",
+        "error": "Red warning icon with 'Could not load data' and a large Retry button"
+      },
+      "layout": "Vertical scroll. Top: Language toggle (Hindi/EN) in a pill. Center: Massive circular or pill-shaped primary CTA ('New Scan') with a camera icon. Below: Horizontal scrolling list of 'Recent Scans' and a 'Grafting Tips' banner card."
+    },
+    {
+      "name": "Scanner",
+      "purpose": "Live camera view to capture seedling or grafted plant.",
+      "states": {
+        "loading": "Camera initializing spinner",
+        "empty": "N/A",
+        "error": "Camera access denied message with 'Allow Camera' CTA"
+      },
+      "layout": "Full-screen camera viewfinder. Floating transparent dark overlay at top with back button. Center: Subtle target bounding box. Bottom: Huge, high-contrast white capture button on a dark translucent bottom bar."
+    },
+    {
+      "name": "Result",
+      "purpose": "Display AI grafting analysis with extreme clarity, color-coded verdict, and voice playback.",
+      "states": {
+        "loading": "Analyzing photo... (animated scanning line)",
+        "empty": "N/A",
+        "error": "Analysis failed, with large Retry button"
+      },
+      "layout": "Top half: The captured photo with a gradient scrim, overlaid with a massive Status Badge (Green/Yellow/Red). Center: Huge Speaker icon button to 'Read Aloud' (must be highly prominent). Bottom: 2-3 short action steps (each in a large card with an icon). Sticky CTA at bottom: 'Save & Go Home'."
+    },
+    {
+      "name": "History",
+      "purpose": "Log of past scans for the farmer to track progress over time.",
+      "states": {
+        "loading": "Skeleton list items",
+        "empty": "Empty state illustration with 'No scans yet' and a CTA to scan.",
+        "error": "Failed to load history"
+      },
+      "layout": "Vertical list. Each row is a chunky card: Left side photo thumbnail, Middle has Date and Title, Right side has a color-coded status dot or pill. Big tap targets."
+    },
+    {
+      "name": "Tips",
+      "purpose": "Simple, visual guide for grafting care.",
+      "states": {
+        "loading": "Skeleton cards",
+        "empty": "No tips available",
+        "error": "Failed to load tips"
+      },
+      "layout": "Grid or vertical stack of large cards. Each card has a hero image/illustration, a bold title, and minimal text. Includes an audio button on each tip to read it out loud."
+    }
+  ],
+  "images": {
+    "home_hero": {
+      "url": "https://images.pexels.com/photos/31677155/pexels-photo-31677155.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Tomato seedlings in greenhouse"
+    },
+    "history_thumb_1": {
+      "url": "https://images.unsplash.com/photo-1596199050105-6d5d32222916?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTJ8MHwxfHNlYXJjaHwzfHxncmFmdGVkJTIwdG9tYXRvJTIwcGxhbnR8ZW58MHx8fHwxNzk1NTk4NDIyfDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Grafted tomato plant"
+    },
+    "history_thumb_2": {
+      "url": "https://images.unsplash.com/photo-1583263840577-b174af9ac796?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwzfHx0b21hdG8lMjBzZWVkbGluZyUyMG9uJTIwZmFybXxlbnwwfHx8fDE3OTU1OTg0MjJ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Tomato seedling with water droplets"
+    },
+    "tip_image_1": {
+      "url": "https://images.unsplash.com/photo-1591857177593-aec16c2d8f60?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwyfHx0b21hdG8lMjBzZWVkbGluZyUyMG9uJTIwZmFybXxlbnwwfHx8fDE3OTU1OTg0MjJ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Seedling in soil"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use 'Baloo 2' font for excellent Devanagari (Hindi) script support as well as a friendly, rounded English aesthetic.",
+    "Implement extremely large tap targets (minimum 56pt) and high contrast colors for all primary actions to account for outdoor, high-sunlight usage and low literacy.",
+    "Disable glassmorphism/blur effects across the app; rely on solid color surfaces and stark contrast for maximum visibility.",
+    "Integrate a prominent 'Speaker' (Audio) button on the Result and Tips screens that pulses or has a high-contrast background to encourage usage for non-reading farmers.",
+    "Use the traffic light color system (Green/Yellow/Red) aggressively for the scan verdict, making the background of the verdict card match the status.",
+    "Design a Hindi/English language toggle pill at the top of the Home screen so it can be changed instantly without diving into settings.",
+    "Keep navigation extremely linear. Avoid complex nested menus. The primary action is always visible."
+  ]
+}
